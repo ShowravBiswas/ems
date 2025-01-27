@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Login - Event Management System</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="assets/css/styles.css" rel="stylesheet" />
-</head>
-<body>
-<!-- Responsive navbar-->
-<?php include_once('includes/navbar.php'); ?>
+<?php
+$title = "Login";
+session_start();
+include 'helper/helpers.php';
+require_once('scripts/login_handler.php');
+include_once('includes/header.php');
+include_once('includes/navbar.php');
+?>
 
 <!-- Login section-->
 <section class="bg-light">
@@ -27,18 +17,38 @@
         </div>
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-6">
-                <form id="loginForm">
+                <form id="loginForm" method="POST" action="">
                     <!-- Email address input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="email" type="email" placeholder="name@example.com" required />
+                        <input
+                                class="form-control <?php echo isset($errors['email']) ? 'is-invalid' : ''; ?>"
+                                id="email"
+                                type="email"
+                                name="email"
+                                placeholder="name@example.com"
+                                value="<?php escape_html($email); ?>"
+                                required
+                                autocomplete="off"
+                        />
                         <label for="email">Email address</label>
-                        <div class="invalid-feedback">Email is required.</div>
+                        <div class="invalid-feedback"><?php echo $errors['email'] ?? ''; ?></div>
                     </div>
                     <!-- Password input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="password" type="password" placeholder="Enter your password..." required />
+                        <input
+                                class="form-control <?php echo isset($errors['password']) ? 'is-invalid' : ''; ?>"
+                                id="password"
+                                type="password"
+                                name="password"
+                                placeholder="Enter your password..."
+                                required
+                                autocomplete="off"
+                        />
                         <label for="password">Password</label>
-                        <div class="invalid-feedback">Password is required.</div>
+                        <div class="invalid-feedback"><?php echo $errors['password'] ?? ''; ?></div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <div class="text-danger"><?php echo $errors['general'] ?? ''; ?></div>
                     </div>
                     <div class="d-grid mb-3">
                         <button class="btn btn-primary btn-lg" id="loginButton" type="submit">Login</button>
@@ -54,14 +64,5 @@
 
 <!-- Footer-->
 <?php include_once('includes/footer.php'); ?>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="assets/js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-</body>
-</html>
+<?php include_once('scripts/flush_message_handler.php');?>
+
