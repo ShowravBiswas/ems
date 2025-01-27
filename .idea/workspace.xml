@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="90885ce0-1c34-4265-9285-2cf91403f832" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/admin/includes/admin-navbar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/includes/admin-sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/change-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/change-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/edit-profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit-profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/navbar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/sidebar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/manage-users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/manage-users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/search-result.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/search-result.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/user-profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/user-profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/login_handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/login_handler.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <hideBySeverity>
+      <option value="300" />
+    </hideBySeverity>
+  </component>
+  <component name="ProjectId" id="2s4FXq6ryOxOwMIRSSnxOhBTNe3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/assets/css" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\My-Personal-Project\test-olloyo\ems\admin\assets\css" />
+      <recent name="D:\My-Personal-Project\test-olloyo\ems" />
+      <recent name="D:\My-Personal-Project\test-olloyo\ems\admin" />
+      <recent name="D:\My-Personal-Project\test-olloyo\ems\website" />
+      <recent name="D:\My-Personal-Project\test-olloyo\ems\website\assets\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\My-Personal-Project\test-olloyo\ems\website\assets\images" />
+      <recent name="D:\My-Personal-Project\test-olloyo\ems\config" />
+      <recent name="D:\My-Personal-Project\test-olloyo\ems" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="90885ce0-1c34-4265-9285-2cf91403f832" name="Default Changelist" comment="" />
+      <created>1737706983306</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737706983306</updated>
+      <workItem from="1737706984486" duration="1600000" />
+      <workItem from="1737708626521" duration="117000" />
+      <workItem from="1737730193652" duration="7376000" />
+      <workItem from="1737997402546" duration="8644000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

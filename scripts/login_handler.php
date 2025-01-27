@@ -47,7 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ];
 
                     // Redirect to the dashboard
-                    header('Location: dashboard.php');
+                    //header('Location: admin/dashboard.php');
+                    echo "<script>window.location.href='admin/dashboard.php'</script>";
                     exit();
                 } else {
                     $errors['general'] = 'Your account is not approved yet. Please contact with admin';
