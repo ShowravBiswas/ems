@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="90885ce0-1c34-4265-9285-2cf91403f832" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/includes/admin-navbar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/includes/admin-sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/change-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/change-password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/edit-profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit-profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/navbar.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/sidebar.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/manage-users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/manage-users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/search-result.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/search-result.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/user-profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/user-profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/login_handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/login_handler.php" afterDir="false" />
-    </list>
+    <list default="true" id="90885ce0-1c34-4265-9285-2cf91403f832" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,24 +24,38 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\laragon\bin\php\php-8.3.13-Win32-vs16-x64\php.exe" />
   <component name="ProblemsViewState">
     <hideBySeverity>
       <option value="300" />
     </hideBySeverity>
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="2s4FXq6ryOxOwMIRSSnxOhBTNe3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/assets/css" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\My-Personal-Project\test-olloyo\ems\admin\assets\css" />
@@ -67,6 +70,13 @@
       <recent name="D:\My-Personal-Project\test-olloyo\ems" />
     </key>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.15619.9" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -79,6 +89,7 @@
       <workItem from="1737708626521" duration="117000" />
       <workItem from="1737730193652" duration="7376000" />
       <workItem from="1737997402546" duration="8644000" />
+      <workItem from="1738043212169" duration="519000" />
     </task>
     <servers />
   </component>

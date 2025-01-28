@@ -64,5 +64,5 @@ include_once('includes/navbar.php');
 
 <!-- Footer-->
 <?php include_once('includes/footer.php'); ?>
-<?php include_once('scripts/flush_message_handler.php');?>
+<?php flash_message_handler();?>
 
