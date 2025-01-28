@@ -35,6 +35,36 @@ if (!isset($_SESSION['user'])) {
                                 </div>
                             </div>
                         </div>
+                        <?php
+                        $query=mysqli_query($conn,"select id from events");
+                        $totalEvents=mysqli_num_rows($query);
+                        ?>
+
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card bg-success text-white mb-4">
+                                <div class="card-body">Total Events
+                                    <span style="font-size:22px;"> <?php echo $totalEvents;?></span></div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="manage-events.php">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                        $query=mysqli_query($conn,"select id from event_attendees");
+                        $totalEventAttendees=mysqli_num_rows($query);
+                        ?>
+
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card bg-danger text-white mb-4">
+                                <div class="card-body">Total Registered Attendee
+                                    <span style="font-size:22px;"> <?php echo $totalEventAttendees;?></span></div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="manage-events.php">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </main>
             <?php include_once('includes/footer.php'); ?>

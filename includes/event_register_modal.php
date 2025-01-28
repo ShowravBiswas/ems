@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <p><strong>Event:</strong> <span id="event_name"></span></p>
-                <p><strong>Description:</strong> <span id="event_description"></span></p>
+                <p><strong>Description:</strong> <span class="justify-text" id="event_description"></span></p>
                 <p><strong>Date:</strong> <span id="event_date"></span></p>
                 <p><strong>Venue:</strong> <span id="event_venue"></span></p>
 
@@ -41,6 +41,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
+
         $(".register-btn").click(function () {
             let eventId = $(this).data("id");
             $.post("scripts/check_capacity.php", { event_id: eventId }, function (response) {
@@ -62,10 +63,25 @@
         $("#registerForm").submit(function (e) {
             e.preventDefault();
             $.post("scripts/register_attendee.php", $(this).serialize(), function (response) {
-                // let data = JSON.parse(response);
-                // if (data.status === "success") {
-                //     $("#registerModal").modal("hide");
-                // }
+                let data = JSON.parse(response); // Correct JSON decoding
+
+                console.log(data.status); // Log the correct response
+
+                if (data.status === "success") {
+                    alert("Registration Successful!");
+                    $("#registerModal").modal("hide");
+
+                    // Reset fields after successful submission
+                    $("#event_name, #event_date, #event_venue").text(''); // For non-input elements
+                    $("#event_description").text('');
+                    $("#event_id").val(''); // For input fields
+                    $("#registerForm")[0].reset(); // Reset form inputs
+                }
+                if(data.status === "error" || data.status === "duplicate"){
+                    alert(data.message);
+                }
+            }).fail(function () {
+                alert("Error processing request.");
             });
         });
     });

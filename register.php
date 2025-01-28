@@ -60,5 +60,3 @@ include_once('includes/navbar.php');
     </div>
 </section>
 <?php include_once('includes/footer.php'); ?>
-</body>
-</html>
