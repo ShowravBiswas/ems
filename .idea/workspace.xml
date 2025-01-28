@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90885ce0-1c34-4265-9285-2cf91403f832" name="Default Changelist" comment="" />
+    <list default="true" id="90885ce0-1c34-4265-9285-2cf91403f832" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/js/datatables-simple-demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/js/datatables-simple-demo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/edit-profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit-profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/manage-users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/manage-users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/user-profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/user-profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate_tables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/helper/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +63,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "F:/SB-Project/ems/admin/scripts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,11 +74,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\SB-Project\ems\admin\scripts" />
+      <recent name="F:\SB-Project\ems\admin" />
+      <recent name="F:\SB-Project\ems\db" />
       <recent name="D:\My-Personal-Project\test-olloyo\ems\admin\assets\css" />
       <recent name="D:\My-Personal-Project\test-olloyo\ems" />
-      <recent name="D:\My-Personal-Project\test-olloyo\ems\admin" />
-      <recent name="D:\My-Personal-Project\test-olloyo\ems\website" />
-      <recent name="D:\My-Personal-Project\test-olloyo\ems\website\assets\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\My-Personal-Project\test-olloyo\ems\website\assets\images" />
@@ -89,7 +105,7 @@
       <workItem from="1737708626521" duration="117000" />
       <workItem from="1737730193652" duration="7376000" />
       <workItem from="1737997402546" duration="8644000" />
-      <workItem from="1738043212169" duration="519000" />
+      <workItem from="1738043212169" duration="16527000" />
     </task>
     <servers />
   </component>

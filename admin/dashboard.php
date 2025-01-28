@@ -1,11 +1,12 @@
-<?php session_start();
+<?php
+session_start();
+$title = "Dashboard";
 include_once('../config/db_config.php');
 if (!isset($_SESSION['user'])) {
     header('location:logout.php');
 } else{
 
     ?>
-
 
     <?php include_once('includes/header.php');?>
     <?php include_once('includes/navbar.php');?>

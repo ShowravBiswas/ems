@@ -1,4 +1,6 @@
 <?php
+include_once('helper/helpers.php');
+include_once('config/db_config.php');
 include_once('includes/header.php');
 include_once('includes/navbar.php');
 include_once('includes/home_banner.php');
@@ -10,58 +12,34 @@ include_once('includes/home_banner.php');
         <div class="text-center mb-5">
             <h2 class="fw-bolder">Upcoming Events</h2>
         </div>
-        <div class="row gx-5 justify-content-center">
-            <!-- Event Card 1 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100">
-                    <img src="assets/images/demo-event-pic.jpg" class="card-img-top" alt="Event 1" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Tech Conference 2025</h5>
-                        <p class="card-text">Join us for an inspiring day of innovation and networking. Perfect for tech enthusiasts!</p>
-                        <p class="text-muted">Date: February 15, 2025</p>
-                        <p class="text-muted">Location: New York City</p>
-                        <div class="d-grid">
-                            <a href="#" class="btn btn-dark fw-bold">Register Now</a>
+        <div class="row d-flex flex-wrap">
+            <!-- Event Card -->
+            <?php
+            $ret = mysqli_query($conn, "SELECT * FROM events WHERE event_datetime >= NOW() ORDER BY event_datetime ASC");
+            while ($row = mysqli_fetch_array($ret)) { ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="assets/images/demo-event-pic.jpg" class="card-img-top" alt="Event Image" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo htmlspecialchars($row['name']); ?></h5>
+                            <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
+                            <p class="bg-warning px-1 text-white fw-bold">
+                                Date: <?php echo formatEventDateTime($row['event_datetime']); ?>
+                            </p>
+                            <p class="text-muted">Location: <?php echo htmlspecialchars($row['venue']); ?></p>
+                            <div class="d-grid">
+                                <a href="javascript:void(0);" class="btn btn-dark fw-bold register-btn" data-id="<?php echo $row['id']; ?>">Register Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Event Card 2 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100">
-                    <img src="assets/images/demo-event-pic.jpg" class="card-img-top" alt="Event 2" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Music Fest 2025</h5>
-                        <p class="card-text">Experience an unforgettable night of live music, featuring top artists from around the globe.</p>
-                        <p class="text-muted">Date: March 10, 2025</p>
-                        <p class="text-muted">Location: Los Angeles</p>
-                        <div class="d-grid">
-                            <a href="#" class="btn btn-dark fw-bold">Register Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event Card 3 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100">
-                    <img src="assets/images/demo-event-pic.jpg" class="card-img-top" alt="Event 3" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Art Expo 2025</h5>
-                        <p class="card-text">Explore stunning artworks from renowned and emerging artists. A visual treat awaits!</p>
-                        <p class="text-muted">Date: April 20, 2025</p>
-                        <p class="text-muted">Location: Chicago</p>
-                        <div class="d-grid">
-                            <a href="#" class="btn btn-dark fw-bold">Register Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
 </section>
-
 <!-- Footer-->
-<?php include_once('includes/footer.php'); ?>
+<?php
+include_once('includes/event_register_modal.php');
+include_once('includes/footer.php');
+?>
 

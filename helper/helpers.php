@@ -36,4 +36,9 @@
         return json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
     }
 
+    function formatEventDateTime($datetime) {
+        $date = new DateTime($datetime);
+        return $date->format('F j, Y') . " At " . $date->format('g:iA');
+    }
+
 ?>

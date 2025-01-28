@@ -1,6 +1,10 @@
 <?php
 $title = "Login";
 session_start();
+if (isset($_SESSION['user'])) {
+    echo "<script>window.location.href='admin/dashboard.php'</script>";
+    exit();
+}
 include 'helper/helpers.php';
 require_once('scripts/login_handler.php');
 include_once('includes/header.php');

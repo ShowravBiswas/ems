@@ -1,7 +1,8 @@
 <?php
 session_start();
-$title = "User Profile";
+$title = "Event Detail";
 include_once('../config/db_config.php');
+include_once('../helper/helpers.php');
 if (!isset($_SESSION['user'])) {
     header('location:logout.php');
 } else{
@@ -17,35 +18,38 @@ if (!isset($_SESSION['user'])) {
                     <div class="container-fluid px-4">
                         
 <?php 
-$userid=$_GET['uid'];
-$query=mysqli_query($conn,"select * from users where id='$userid'");
+$adminId=$_GET['id'];
+$query=mysqli_query($conn,"select * from events where id='$adminId'");
 while($result=mysqli_fetch_array($query))
 {?>
-                        <h1 class="mt-4"><?php echo $result['name'];?>'s Profile</h1>
+                        <h1 class="mt-4"><?php echo $result['name'];?> Detail</h1>
                         <div class="card mb-4">
                      
                             <div class="card-body">
-                                <a href="edit-profile.php?uid=<?php echo $result['id'];?>">Edit</a>
+                                <a href="edit-event.php?id=<?php echo $result['id'];?>">Edit</a>
                                 <table class="table table-bordered">
                                     <tbody>
                                        <tr>
-                                        <th>Name</th>
+                                        <th>Event Title</th>
                                            <td><?php echo $result['name'];?></td>
                                        </tr>
                                        <tr>
-                                           <th>Email</th>
-                                           <td colspan="3"><?php echo $result['email'];?></td>
+                                           <th>Event Date & Time</th>
+                                           <td colspan="3"><?php echo formatEventDateTime($result['event_datetime']); ?></td>
                                        </tr>
                                          <tr>
-                                           <th>Phone No.</th>
-                                           <td colspan="3"><?php echo $result['phone_no'];?></td>
+                                           <th>Max Capacity</th>
+                                           <td colspan="3"><?php echo $result['max_capacity'];?></td>
                                        </tr>
-                                        <tr>
-                                           <th>Is Approved</th>
-                                            <td colspan="3"><?php echo $result['is_approved'] ? '<span class="badge rounded-pill text-bg-success">Approved</span>'
-                                                    : '<span class="badge rounded-pill text-bg-danger">Not Approved</span>'; ?></td>
-                                            <td>
+                                       <tr>
+                                           <th>Venue</th>
+                                           <td colspan="3"><?php echo $result['venue'];?></td>
                                        </tr>
+                                       <tr>
+                                           <th>Description</th>
+                                           <td colspan="3"><?php echo $result['description'];?></td>
+                                       </tr>
+
                                     </tbody>
                                 </table>
                             </div>
