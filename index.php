@@ -15,7 +15,19 @@ include_once('includes/home_banner.php');
         <div class="row d-flex flex-wrap">
             <!-- Event Card -->
             <?php
-            $ret = mysqli_query($conn, "SELECT * FROM events WHERE event_datetime >= NOW() ORDER BY event_datetime ASC");
+            $query = "SELECT e.*, 
+                 (e.max_capacity - COALESCE(a.attendee_count, 0)) AS available_seats
+          FROM events e
+          LEFT JOIN (
+              SELECT event_id, COUNT(*) AS attendee_count 
+              FROM event_attendees 
+              GROUP BY event_id
+          ) a ON e.id = a.event_id
+          WHERE e.event_datetime >= NOW()
+          ORDER BY e.event_datetime ASC";
+
+            $ret = mysqli_query($conn, $query);
+
             while ($row = mysqli_fetch_array($ret)) { ?>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
@@ -27,6 +39,9 @@ include_once('includes/home_banner.php');
                                 Date: <?php echo formatEventDateTime($row['event_datetime']); ?>
                             </p>
                             <p class="text-muted">Location: <?php echo htmlspecialchars($row['venue']); ?></p>
+                            <p class="text-success fw-bold">
+                                Available Seats: <?php echo max($row['available_seats'], 0); ?>
+                            </p>
                             <div class="d-grid">
                                 <a href="javascript:void(0);" class="btn btn-dark fw-bold register-btn" data-id="<?php echo $row['id']; ?>">Register Now</a>
                             </div>
