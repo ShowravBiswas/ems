@@ -1,17 +1,16 @@
 <?php
 $host = '127.0.0.1';
-$username = 'root';
+$username = '';
 $password = '';
-$dbname = 'db_ems';
+$dbname = '';
 
 try {
     $conn = new mysqli($host, $username, $password, $dbname);
     if ($conn->connect_error) {
-        die('Connection failed: ' . $conn->connect_error);
+        $_SESSION['flash_message'] = ['message' => 'Something went wrong.Please try again!', 'type' => 'danger'];
     }
 } catch (Exception $e) {
-    echo 'Database connection error: ' . $e->getMessage();
     header('Location: db/setup.php');
-    exit();
+    $_SESSION['flash_message'] = ['message' => 'Something went wrong.Please try again!', 'type' => 'danger'];
 }
 ?>

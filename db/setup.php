@@ -1,4 +1,6 @@
 <?php
+session_start();
+include '../helper/helpers.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db_host = "127.0.0.1"; // Host (can be changed to user input if needed)
     $db_name = $_POST["db_name"];
@@ -11,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Check if connection failed
         if ($conn->connect_error) {
+            echo "s";
             throw new Exception("Connection failed: " . $conn->connect_error);
         }
 
@@ -24,12 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $config_content .= "try {\n";
         $config_content .= "    \$conn = new mysqli(\$host, \$username, \$password, \$dbname);\n";
         $config_content .= "    if (\$conn->connect_error) {\n";
-        $config_content .= "        die('Connection failed: ' . \$conn->connect_error);\n";
+        $config_content .= "        \$_SESSION['flash_message'] = ['message' => 'Something went wrong. Please try again!', 'type' => 'danger'];\n";
         $config_content .= "    }\n";
         $config_content .= "} catch (Exception \$e) {\n";
-        $config_content .= "    echo 'Database connection error: ' . \$e->getMessage();\n";
         $config_content .= "    header('Location: db/setup.php');\n";
-        $config_content .= "    exit();\n";
+        $config_content .= "        \$_SESSION['flash_message'] = ['message' => 'Something went wrong. Please try again!', 'type' => 'danger'];\n";
         $config_content .= "}\n";
         $config_content .= "?>";
 
@@ -39,10 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once('migrate_tables.php');
         // After migration, seed a user (e.g., admin user)
         header("Location: ../index.php");
-        exit;
+        //exit;
     } catch (Exception $e) {
-        header("Location: setup.php");
-        exit();
+        $_SESSION['flash_message'] = ['message' => 'Something went wrong.Please try again!', 'type' => 'danger'];
     }
 }
 ?>
@@ -81,6 +82,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- Add Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<?php
+flash_message_handler();
+?>
 </body>
 </html>
 
