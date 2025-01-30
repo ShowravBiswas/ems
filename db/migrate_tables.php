@@ -55,6 +55,16 @@ foreach ($sqlFiles as $sqlFile) {
     }
 }
 
+$hashed_password = password_hash('admin123', PASSWORD_DEFAULT); // Example password hashing
+$name = 'Admin';
+$email = 'admin@example.com';
+$phone_no = '01800000000';
+$is_approved = 1;
+
+$stmt = $conn->prepare("INSERT INTO users (name, email, phone_no, password, is_approved, created_at) VALUES (?, ?, ?, ?, ?, NOW())");
+$stmt->bind_param("ssssi", $name, $email, $phone_no, $hashed_password, $is_approved);
+$stmt->execute();
+
 // Close the connection
 $conn->close();
 ?>

@@ -1,6 +1,6 @@
 <?php
-include_once('helper/helpers.php');
 include_once('config/db_config.php');
+include_once('helper/helpers.php');
 include_once('includes/header.php');
 include_once('includes/navbar.php');
 include_once('includes/home_banner.php');
