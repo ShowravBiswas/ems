@@ -87,11 +87,6 @@ The **Event Management System** is a web-based application built with pure PHP a
 - **Email:** [admin@example.com](mailto\:admin@example.com)
 - **Password:** admin123
 
-### **User Account**
-
-- **Email:** [user@example.com](mailto\:user@example.com)
-- **Password:** user123
-
 ## Deployment & Hosting
 
 - The project is hosted at: **[Live Demo](https://your-hosting-link.com)**
