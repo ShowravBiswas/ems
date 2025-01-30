@@ -100,9 +100,3 @@ The **Event Management System** is a web-based application built with pure PHP a
 ## License
 
 This project is open-source and available under the MIT License.
-
----
-
-Feel free to modify any details based on your actual implementation.
-
-make a README.md dowanldable file 
