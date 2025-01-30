@@ -47,6 +47,7 @@ if (isset($_GET['id'])) {
                                 <th>Title</th>
                                 <th>Date & Time</th>
                                 <th>Max Capacity</th>
+                                <th>Registered Attendee</th>
                                 <th>Venue</th>
                                 <th>Action</th>
                             </tr>
@@ -57,20 +58,32 @@ if (isset($_GET['id'])) {
                                 <th>Title</th>
                                 <th>Date & Time</th>
                                 <th>Max Capacity</th>
+                                <th>Registered Attendee</th>
                                 <th>Venue</th>
                                 <th>Action</th>
                             </tr>
                             </tfoot>
                             <tbody>
                             <?php
-                            $ret = mysqli_query($conn, "SELECT * FROM events");
+                            $query = "SELECT e.*, 
+                 COALESCE(COUNT(a.id), 0) AS total_attendees 
+          FROM events e
+          LEFT JOIN event_attendees a ON e.id = a.event_id
+          GROUP BY e.id
+          ORDER BY e.event_datetime ASC";
                             $cnt = 1;
+                            $ret = mysqli_query($conn, $query);
                             while ($row = mysqli_fetch_array($ret)) { ?>
                                 <tr>
                                     <td><?php echo $cnt; ?></td>
                                     <td><?php echo $row['name']; ?></td>
                                     <td><?php echo formatEventDateTime($row['event_datetime']); ?></td>
-                                    <td><?php echo $row['max_capacity']; ?></td>
+                                    <td class="text-center"><?php echo $row['max_capacity']; ?></td>
+                                    <td class="text-center">
+                                        <span class="badge rounded-pill <?php echo ($row['total_attendees'] >= $row['max_capacity']) ? 'bg-danger' : 'bg-primary'; ?>">
+                                        <?php echo $row['total_attendees']; ?></span> |
+                                        <a href="scripts/download_attendee_csv_report.php?event_id=<?php echo $row['id']; ?>" class="btn btn-sm btn-success">Download CSV</a>
+                                    </td>
                                     <td><?php echo $row['venue']; ?></td>
                                     <td>
                                         <a href="event-detail.php?id=<?php echo $row['id'];?>">

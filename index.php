@@ -34,13 +34,19 @@ include_once('includes/home_banner.php');
                         <img src="assets/images/demo-event-pic.jpg" class="card-img-top" alt="Event Image" style="height: 200px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo htmlspecialchars($row['name']); ?></h5>
-                            <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
+                            <p class="card-text">
+                                <?php
+                                $maxLength = 30; // Set the character limit
+                                $description = htmlspecialchars($row['description']);
+                                echo (strlen($description) > $maxLength) ? substr($description, 0, $maxLength) . '...' : $description;
+                                ?>
+                            </p>
                             <p class="bg-warning px-1 text-white fw-bold">
                                 Date: <?php echo formatEventDateTime($row['event_datetime']); ?>
                             </p>
                             <p class="text-muted">Location: <?php echo htmlspecialchars($row['venue']); ?></p>
-                            <p class="text-success fw-bold">
-                                Available Seats: <?php echo max($row['available_seats'], 0); ?>
+                            <p class="<?php echo ($row['available_seats'] ?? 0) ? 'text-success' : 'text-danger'; ?> fw-bold">
+                            Available Seats: <?php echo max($row['available_seats'], 0); ?>
                             </p>
                             <div class="d-grid">
                                 <a href="javascript:void(0);" class="btn btn-dark fw-bold register-btn" data-id="<?php echo $row['id']; ?>">Register Now</a>
