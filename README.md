@@ -55,9 +55,10 @@ The **Event Management System** is a web-based application built with pure PHP a
    - Enter the database name, user, and password in the provided form.
    - The system will automatically create the database and populate it with seed data.
    - An initial admin user will be created:
+   ```sh
      Email: admin@example.com
      Password: admin123
-     ```
+   ```
 3. **Start the Server**
    - If using Apache, place the project in `htdocs` and start Apache.
    - If using PHP's built-in server, run:
