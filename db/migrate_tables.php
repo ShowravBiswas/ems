@@ -23,6 +23,7 @@ $sqlFiles = [
 // Function to check if a table exists
 function tableExists($conn, $tableName) {
     $result = $conn->query("SHOW TABLES LIKE '$tableName'");
+    $_SESSION['flash_message'] = ['message' => $tableName .'table already exist', 'type' => 'error'];
     return $result->num_rows > 0;
 }
 
@@ -39,7 +40,7 @@ foreach ($sqlFiles as $sqlFile) {
 
             // Check if the table already exists
             if (tableExists($conn, $tableName)) {
-                echo "Table '$tableName' already exists. Skipping the migration for this file: $sqlFile.<br>";
+                $_SESSION['flash_message'] = ['message' => $tableName .'table already exist', 'type' => 'error'];
                 continue; // Skip to the next file
             }
         }

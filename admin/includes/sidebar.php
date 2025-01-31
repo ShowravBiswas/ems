@@ -26,7 +26,7 @@ function isActive($page, $current_page) {
                 </a>
                 <a class="nav-link" href="logout.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>
-                    Signout
+                    Logout
                 </a>
             </div>
         </div>

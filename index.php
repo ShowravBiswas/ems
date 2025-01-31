@@ -33,7 +33,11 @@ include_once('includes/home_banner.php');
                     <div class="card h-100">
                         <img src="assets/images/demo-event-pic.jpg" class="card-img-top" alt="Event Image" style="height: 200px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo htmlspecialchars($row['name']); ?></h5>
+                            <h5 class="card-title"><?php
+                                $maxLength = 27; // Set the character limit
+                                $name = htmlspecialchars($row['name']);
+                                echo (strlen($name) > $maxLength) ? substr($name, 0, $maxLength) . '...' : $name;
+                                ?></h5>
                             <p class="card-text">
                                 <?php
                                 $maxLength = 30; // Set the character limit
@@ -62,5 +66,6 @@ include_once('includes/home_banner.php');
 <?php
 include_once('includes/event_register_modal.php');
 include_once('includes/footer.php');
+flash_message_handler();
 ?>
 

@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Redirect to a new page after successful setup (optional)
         require_once('migrate_tables.php');
         // After migration, seed a user (e.g., admin user)
+        $_SESSION['flash_message'] = ['message' => 'Database setup successful! Tables and seed data have been added.', 'type' => 'success'];
         header("Location: ../index.php");
         //exit;
     } catch (Exception $e) {
@@ -56,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Database Setup</title>
     <!-- Add Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body class="bg-light">
 
