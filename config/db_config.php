@@ -1,8 +1,8 @@
 <?php
 $host = '127.0.0.1';
-$username = 'root';
+$username = '';
 $password = '';
-$dbname = 'db_ems';
+$dbname = '';
 
 try {
     $conn = new mysqli($host, $username, $password, $dbname);

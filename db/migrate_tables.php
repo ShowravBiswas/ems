@@ -1,17 +1,5 @@
 <?php
-// Database connection details
-$host = '127.0.0.1'; // Or your database host
-$username = 'root'; // Database username
-$password = ''; // Database password (leave empty if none)
-$dbname = 'db_ems'; // Replace with your database name
-
-// Connect to the MySQL database
-$conn = new mysqli($host, $username, $password, $dbname);
-
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include_once('config/db_config.php');
 
 // Array of SQL files you want to execute
 $sqlFiles = [
@@ -40,7 +28,7 @@ foreach ($sqlFiles as $sqlFile) {
 
             // Check if the table already exists
             if (tableExists($conn, $tableName)) {
-                $_SESSION['flash_message'] = ['message' => $tableName .'table already exist', 'type' => 'error'];
+                $_SESSION['flash_message'] = ['message' => $tableName .' table already exist', 'type' => 'error'];
                 continue; // Skip to the next file
             }
         }
@@ -56,15 +44,27 @@ foreach ($sqlFiles as $sqlFile) {
     }
 }
 
-$hashed_password = password_hash('admin123', PASSWORD_DEFAULT); // Example password hashing
-$name = 'Admin';
-$email = 'admin@example.com';
-$phone_no = '01800000000';
-$is_approved = 1;
+$sqlFile = __DIR__ . '\db_backup.sql'; // Adjust the path if necessary
 
-$stmt = $conn->prepare("INSERT INTO users (name, email, phone_no, password, is_approved, created_at) VALUES (?, ?, ?, ?, ?, NOW())");
-$stmt->bind_param("ssssi", $name, $email, $phone_no, $hashed_password, $is_approved);
-$stmt->execute();
+// Function to execute an SQL file
+function importSqlFile($conn, $sqlFile) {
+    if (file_exists($sqlFile)) {
+        $sql = file_get_contents($sqlFile);
+
+        if ($conn->multi_query($sql)) {
+            do {
+                $conn->next_result(); // Move to the next query result
+            } while ($conn->more_results());
+        } else {
+            die("Error executing SQL file: " . $conn->error);
+        }
+    } else {
+        die("SQL file not found: $sqlFile");
+    }
+}
+
+// Import the database from the SQL file
+importSqlFile($conn, $sqlFile);
 
 // Close the connection
 $conn->close();
