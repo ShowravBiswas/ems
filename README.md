@@ -47,17 +47,16 @@ The **Event Management System** is a web-based application built with pure PHP a
 
 1. **Clone the Repository**
    ```sh
-   git clone https://github.com/yourusername/event-management-system.git
-   cd event-management-system
+   git clone https://github.com/ShowravBiswas/ems.git
+   cd ems
    ```
 2. **Configure the Database**
-   - Import the provided SQL file `database.sql` into MySQL.
-   - Update `config.php` with database credentials:
-     ```php
-     define('DB_HOST', 'localhost');
-     define('DB_NAME', 'event_management');
-     define('DB_USER', 'root');
-     define('DB_PASS', '');
+   - When the system is run for the first time, a Database Setup Wizard will appear.
+   - Enter the database name, user, and password in the provided form.
+   - The system will automatically create the database and populate it with seed data.
+   - An initial admin user will be created:
+     Email: admin@example.com
+     Password: admin123
      ```
 3. **Start the Server**
    - If using Apache, place the project in `htdocs` and start Apache.
@@ -84,13 +83,13 @@ The **Event Management System** is a web-based application built with pure PHP a
 
 ### **Admin Account**
 
-- **Email:** [admin@example.com](mailto\:admin@example.com)
+- **Email:** [admin@example.com]
 - **Password:** admin123
 
 ## Deployment & Hosting
 
-- The project is hosted at: **[Live Demo](https://your-hosting-link.com)**
-- The full source code is available at: **[GitHub Repo](https://github.com/yourusername/event-management-system)**
+- The project is hosted at: **[Live Demo](http://69.30.247.59:8880/)**
+- The full source code is available at: **[GitHub Repo](https://github.com/ShowravBiswas/ems)**
 
 ## License
 
